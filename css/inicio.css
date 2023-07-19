@@ -1,0 +1,248 @@
+span.navbar-toggler-icon{
+    filter: drop-shadow(1px 1px 1px rgb(255, 255, 255));
+}
+.navbar-toggler{
+    color: rgba(17, 17, 17, 0) !important;
+}
+.show{
+    z-index: 1000;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+header{
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background: linear-gradient(rgba(17, 17, 17, 0.659),rgba(17, 17, 17, 0.718)),url(../img/loginbg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+
+.bienvenido p{
+    color: white;
+    font-size: 20px;
+    z-index: 10;
+}
+.navegador-separado{
+    display: flex;
+    justify-content: flex-end;
+}
+
+a.navbar-brand{
+    font-size: 22px;
+    color: white !important;
+}
+
+.navbar-nav{
+    position: fixed;
+    background: linear-gradient(rgba(17, 17, 17, 0.659),rgba(17, 17, 17, 0.718));
+    border-radius: 12px;
+    z-index: 10000;
+}
+
+div.navegador-separado div.navbar-nav a.nav_option{
+    color: white !important;
+    position: relative;
+    z-index: 2;
+}
+
+a.nav_option::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    top: -500px;
+    left: 0;
+    background: rgb(8, 104, 249);
+    z-index: -2;
+    border-radius: 12px;
+}
+
+a.nav_option:hover::after{
+    animation: aparecer 0.18s ease-in forwards;
+}
+
+div.navegador-separado div.navbar-nav a.desconectar{
+    color: red !important;
+    z-index: 1;
+    position: relative;
+}
+div.navegador-separado div.navbar-nav a.desconectar:hover{
+    color: white !important;
+}
+
+
+a.desconectar::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    border-radius: 12px;
+    height: 80px;
+    top: -500px;
+    left: 0;
+    background: rgb(253, 0, 0);
+    z-index: -2;
+}
+
+a.desconectar:hover::after{
+    animation: aparecer 0.18s ease-in forwards;
+}
+
+@keyframes aparecer{
+    0%{
+        top: -80px;
+    }
+    100%{
+        top: -30px;
+    }
+}
+
+
+header div.contenedor_principal{
+    position: absolute;
+    bottom: -80px;
+    width: 100%;
+}
+
+header div.entidades{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+header .entidades h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 200px;
+    background: rgba(96, 96, 96, 0.331);
+    color: white;
+    border-radius: 16px; 
+    text-shadow: 1px 1px 1px black;
+    box-shadow: 1px 1px 10px rgb(198, 198, 198);
+    position: relative;
+}
+
+header .entidades h3:hover{
+    background: linear-gradient(rgba(8, 104, 249, 0.278),rgb(8, 104, 249));
+    cursor: pointer;
+    box-shadow: 1px 1px 10px rgba(0, 55, 255, 0.328);
+    animation: ease-in-out 1s infinite expandir;
+}
+@keyframes expandir{
+    0%{
+        top: 5px;
+    }
+    50%{
+        top: 10px;
+    }
+    100%{
+        top: 5px;
+    }
+}
+
+.entidades h3.computadoras::after{
+    content: 'Computadoras';
+    position: absolute;
+    bottom: 0;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 1px black;
+    margin-bottom: 5px;
+}
+.entidades h3.usuarios::after{
+    content: 'Usuarios';
+    position: absolute;
+    bottom: 0;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 1px black;
+    margin-bottom: 5px;
+}
+.entidades h3.administradores::after{
+    content: 'Administradores';
+    position: absolute;
+    bottom: 0;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 1px black;
+    margin-bottom: 5px;
+}
+.buscador_bd{
+    gap: 5px;
+}
+.botones_db{
+    width: 100%;
+    height: 70%;
+}
+
+main{
+    width: 100%;
+    margin-top: 100px;
+}
+
+@media (max-width: 768px){
+
+    div.entidades{
+        display:flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    header div.contenedor_principal{
+        position: relative;
+
+        width: 100%;
+    }
+    header .entidades h3{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        height: 150px;
+        background: rgba(96, 96, 96, 0.331);
+        color: white;
+        border-radius: 16px; 
+        text-shadow: 1px 1px 1px black;
+        box-shadow: 1px 1px 10px rgb(198, 198, 198);
+        position: relative;
+    }
+    header{
+        position: relative;
+        width: 100%;
+        height: 900px;
+        background: linear-gradient(rgba(17, 17, 17, 0.659),rgba(17, 17, 17, 0.718)),url(../img/loginbg.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    a.desconectar:hover::after{
+        animation: none;
+        display: none;
+    }
+    a.nav_option:hover::after{
+    animation: none;
+    display: none;
+    }
+    .navbar-nav{
+        background-color: rgba(96, 96, 96, 0.331);
+        width: 50%;
+    }
+    .navbar-nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+/** FOOTER **/
+
+footer{
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(rgba(17, 17, 17, 0.856),rgba(17, 17, 17, 0.896));
+    color: rgb(183, 183, 183);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
